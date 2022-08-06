@@ -1,0 +1,75 @@
+Return-Path: <greberyam@gmail.com>
+Received: from localhost (localhost [127.0.0.1])
+	by apolo.schad.do (Postfix) with ESMTP id C954A7E1618;
+	Tue, 28 Nov 2017 11:02:20 -0400 (AST)
+X-Spam-Flag: NO
+X-Spam-Score: -1.988
+X-Spam-Level:
+X-Spam-Status: No, score=-1.988 tagged_above=-10 required=6.6
+	tests=[BAYES_00=-1.9, DKIM_SIGNED=0.1, DKIM_VALID=-0.1,
+	DKIM_VALID_AU=-0.1, FREEMAIL_FROM=0.001, HTML_MESSAGE=0.001,
+	RCVD_IN_DNSWL_NONE=-0.0001, T_FREEMAIL_DOC_PDF=0.01]
+	autolearn=ham autolearn_force=no
+Authentication-Results: apolo.schad.do (amavisd-new); dkim=pass (2048-bit key)
+	header.d=gmail.com
+Received: from apolo.schad.do ([127.0.0.1])
+	by localhost (apolo.schad.do [127.0.0.1]) (amavisd-new, port 10032)
+	with ESMTP id GePdWy7uG8mC; Tue, 28 Nov 2017 11:02:11 -0400 (AST)
+Received: from localhost (localhost [127.0.0.1])
+	by apolo.schad.do (Postfix) with ESMTP id 3DBF67E160B;
+	Tue, 28 Nov 2017 11:02:11 -0400 (AST)
+X-Virus-Scanned: amavisd-new at schad.do
+Received: from apolo.schad.do ([127.0.0.1])
+	by localhost (apolo.schad.do [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id DnJfY3wt7hoN; Tue, 28 Nov 2017 11:02:03 -0400 (AST)
+Received: from spam.schad.do (unknown [192.168.0.24])
+	by apolo.schad.do (Postfix) with ESMTP id 38E517E15E4
+	for <rys@schad.do>; Tue, 28 Nov 2017 11:02:03 -0400 (AST)
+Received: from localhost (localhost [127.0.0.1])
+	by spam.schad.do (Postfix) with ESMTP id F193E2B1575
+	for <rys@schad.do>; Tue, 28 Nov 2017 10:58:49 -0400 (AST)
+X-Quarantine-ID: <GYS7lTVuJACo>
+X-Virus-Scanned: by SpamTitan at schad.do
+Authentication-Results: spam.schad.do (amavisd-new); dkim=pass (2048-bit key)
+	header.d=gmail.com
+Received: from spam.schad.do (localhost [127.0.0.1])
+	by spam.schad.do (Postfix) with ESMTP id F05EB2B1538
+	for <rys@schad.do>; Tue, 28 Nov 2017 10:58:43 -0400 (AST)
+Received: from mail-yw0-f196.google.com (mail-yw0-f196.google.com [209.85.161.196])
+	by spam.schad.do (Postfix) with ESMTPS id 47FE02B1575
+	for <rys@schad.do>; Tue, 28 Nov 2017 10:58:41 -0400 (AST)
+Received: by mail-yw0-f196.google.com with SMTP id m81so50570ywd.2
+        for <rys@schad.do>; Tue, 28 Nov 2017 07:01:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=Elg8OCBYp8r/S/XJyueCVNy5P5sXO2Vbia6z3lRciUQ=;
+        b=YBhszeIfm7O9FrnaFslR4s3EB95vRBY3tTgMaXjaJLIR02nTwwiJB04F/hGdssAxsR
+         gYUtciQiQcrEz4JmK7Abc9vUEvP/rbFF8aj9fhw2y9+w5eKCng2nrB8RGX/8g4O3mE3y
+         E2ESCIOwlV5wA/mxPrApgpZlruwsWLHMKSj+WdKC7ktXWHB3yK6memJPY2w8jp927CLC
+         mTJcSyozzqTpz1nLw/InKzzHUUqDjJlfFF2HIbW4LnQIl3ozW9XV0AiL/lNfUpVAMlAS
+         Ap3N1lQQveQ/DVLSjR1mJgjftCBjx4GYOx5Rl42h5am3WVf+SslAPg6BlvU3luVm7JMO
+         nLEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=Elg8OCBYp8r/S/XJyueCVNy5P5sXO2Vbia6z3lRciUQ=;
+        b=qGEt0FPJYZYwrI0BxYbXd3SVuL0STsRu17Qre7QPhDhhQyObl872ZYNTnkFKLTvoCQ
+         z5mKpwwgVh7piDbMfb10jvOL0OK5hMMe7/IfbbuFTIfKPiW/XGiburFUG+0LX4pUGAgy
+         uikA/4yunMJK4pQhiq/SUeNmGHPAHc6ZR6VPOqVOMnWgA/M7I9fYXm+mxc5SvD511cRZ
+         OpMKcxv0mX7j7kfratVFL6/pw2h238FlscMW3seydOGOlEcgLr0j2FU1yLbBBpbW8HjA
+         KBrDT62kcwGduJE1qKaqVZQHmWcXx1xKfFIGwwhlHVaKAUDbSVgnQl6QvkVGDBeVoRwX
+         tyVQ==
+X-Gm-Message-State: AJaThX6ucukvqBlXFAt4Oron5MnZafJraTrpa+46Ped+Padq3P1dOkLr
+	X80E31dpSJxhHUBQ6EDcEEPKXBWJATdicE4DNBM=
+X-Google-Smtp-Source: AGs4zMYlHfSDDFfI1SkEsNIGTiGXIbyUFjPjlkSJayGS656FqaMi8/H4+75p+14wJb8L+tnq6Pwrp0ljdjY3WhPW5EM=
+X-Received: by 10.129.81.206 with SMTP id f197mr27185910ywb.76.1511881313865;
+ Tue, 28 Nov 2017 07:01:53 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.37.189.69 with HTTP; Tue, 28 Nov 2017 07:01:52 -0800 (PST)
+From: Developers Channel <greberyam@gmail.com>
+Date: Tue, 28 Nov 2017 11:01:52 -0400
+Message-ID: <CAOE2m7OKd+sGyefZ+mmXF6273pp-ANsJpvMAGha5TsH8-ekJbw@mail.gmail.com>
+Subject: curriculum Gregory Rivera
+To: rys@schad.do
+Content-Type: multipart/mixed; boundary="001a11461a90a7ff49055f0c4c7a"
